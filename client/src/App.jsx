@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // ---- EDIT THESE FOR YOUR BUSINESS ----
 const BIZ = {
   name: "MKR Service Center",
-  phone: "+91 00000 00000",
+  phone: "+91 9363481184",
   hours: "9.30 am – 6.30 pm, all days",
   area: "Hosur & nearby areas",
 };
@@ -68,7 +68,7 @@ function Header() {
     <header className="nav-header">
       <div className="nav-wrapper">
         <a href="#" className="brand">
-          <img src="/mkr-logo.jpg" alt="MKR Service Center" className="brand-logo-img" />
+          <span className="brand-badge">MKR</span>
           <span className="brand-title">{BIZ.name}</span>
         </a>
 
@@ -102,10 +102,7 @@ function Header() {
         <div className="mobile-backdrop" onClick={() => setMenuOpen(false)}>
           <div className="mobile-drawer" onClick={(e) => e.stopPropagation()}>
             <div className="mobile-drawer-header">
-              <div className="drawer-brand">
-                <img src="/mkr-logo.jpg" alt="MKR Service Center" className="drawer-logo-img" />
-                <span className="drawer-title">{BIZ.name}</span>
-              </div>
+              <span className="drawer-title">{BIZ.name}</span>
               <button
                 className="close-drawer-btn"
                 onClick={() => setMenuOpen(false)}
@@ -386,17 +383,7 @@ function Home() {
       {/* Hero Section */}
       <section className="hero-banner">
         <div className="hero-intro">
-          <div className="hero-top-partner">
-            <img
-              src="/verified-partner.png"
-              alt="Authorised Service Provider"
-              className="verified-partner-logo"
-            />
-            <div className="hero-top-partner-text">
-              <span className="hero-pill-badge">AUTHORISED SERVICE PROVIDER</span>
-              <span className="hero-pill-location">📍 Trusted Doorstep Service in {BIZ.area}</span>
-            </div>
-          </div>
+          <div className="hero-pill">⭐ Trusted Doorstep Service in {BIZ.area}</div>
           <h1 className="hero-heading">
             Broken Appliance?<br />
             <span className="hero-highlight">Fixed At Your Door.</span>
@@ -515,10 +502,7 @@ function Home() {
       <footer className="footer-wrap">
         <div className="footer-content">
           <div className="footer-brand">
-            <div className="footer-logo-row">
-              <img src="/mkr-logo.jpg" alt="MKR Service Center" className="footer-logo-img" />
-              <h3>{BIZ.name}</h3>
-            </div>
+            <h3>{BIZ.name}</h3>
             <p>Reliable, prompt, and verified doorstep appliance repairs across {BIZ.area}.</p>
             <p>🕒 Working Hours: {BIZ.hours}</p>
           </div>
