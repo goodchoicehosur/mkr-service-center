@@ -1,0 +1,1 @@
+{"name":"mkr-service-center","private":true,"scripts":{"server":"npm --prefix server run dev","client":"npm --prefix client run dev"}}
