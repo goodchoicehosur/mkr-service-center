@@ -1401,3 +1401,111 @@ a:hover {
     justify-content: center;
   }
 }
+/* =========================================================
+   BRAND LOGO & VERIFIED PARTNER BADGE
+========================================================= */
+.brand-logo-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid var(--amber);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  display: block;
+}
+
+.drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.drawer-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--amber);
+}
+
+.footer-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo-img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--amber);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero-top-partner {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-bottom: 1.8rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(245, 158, 11, 0.4);
+  backdrop-filter: blur(8px);
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-lg);
+  max-width: fit-content;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.28);
+}
+
+.verified-partner-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.hero-top-partner:hover .verified-partner-logo {
+  transform: scale(1.05);
+}
+
+.hero-top-partner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.hero-pill-badge {
+  display: inline-block;
+  background: var(--amber);
+  color: #0b1522;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  width: fit-content;
+}
+
+.hero-pill-location {
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .hero-top-partner {
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+  }
+  .verified-partner-logo {
+    width: 90px;
+    height: 90px;
+  }
+  .hero-pill-location {
+    font-size: 0.98rem;
+  }
+}
