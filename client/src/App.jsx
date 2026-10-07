@@ -67,8 +67,8 @@ function Header() {
   return (
     <header className="nav-header">
       <div className="nav-wrapper">
-        <a href="#" className="brand">
-          <span className="brand-badge">MKR</span>
+         <a href="#" className="brand">
+          <img src="/mkr-logo.jpg" alt="MKR Service Center" className="brand-logo-img" />
           <span className="brand-title">{BIZ.name}</span>
         </a>
 
@@ -102,7 +102,10 @@ function Header() {
         <div className="mobile-backdrop" onClick={() => setMenuOpen(false)}>
           <div className="mobile-drawer" onClick={(e) => e.stopPropagation()}>
             <div className="mobile-drawer-header">
-              <span className="drawer-title">{BIZ.name}</span>
+              <div className="drawer-brand">
+                <img src="/mkr-logo.jpg" alt="MKR Service Center" className="drawer-logo-img" />
+                <span className="drawer-title">{BIZ.name}</span>
+              </div>
               <button
                 className="close-drawer-btn"
                 onClick={() => setMenuOpen(false)}
@@ -112,18 +115,10 @@ function Header() {
               </button>
             </div>
             <nav className="mobile-links">
-              <a href="#services" onClick={() => setMenuOpen(false)}>
-                🛠️ Services We Repair
-              </a>
-              <a href="#prices" onClick={() => setMenuOpen(false)}>
-                🏷️ Transparent Prices
-              </a>
-              <a href="#process" onClick={() => setMenuOpen(false)}>
-                ⚡ How It Works
-              </a>
-              <a href="#book" className="drawer-highlight" onClick={() => setMenuOpen(false)}>
-                📅 Book a Technician
-              </a>
+              <a href="#services" onClick={() => setMenuOpen(false)}>🛠️ Services We Repair</a>
+              <a href="#prices" onClick={() => setMenuOpen(false)}>🏷️ Transparent Prices</a>
+              <a href="#process" onClick={() => setMenuOpen(false)}>⚡ How It Works</a>
+              <a href="#book" className="drawer-highlight" onClick={() => setMenuOpen(false)}>📅 Book a Technician</a>
               <a className="drawer-call-btn" href={`tel:${BIZ.phone}`} onClick={() => setMenuOpen(false)}>
                 📞 Call {BIZ.phone}
               </a>
@@ -393,7 +388,12 @@ function Home() {
             Call before 12 noon for guaranteed same-day visits.
           </p>
 
-          <div className="hero-perks">
+          <div className="hero-top-partner">
+            <img
+              src="/verified-partner.png"
+              alt="Authorised Service Provider"
+              className="verified-partner-logo"
+            />
             <div className="perk-item">
               <span className="perk-icon">⚡</span>
               <div>
