@@ -394,6 +394,14 @@ function Home() {
               alt="Authorised Service Provider"
               className="verified-partner-logo"
             />
+            <div className="hero-top-partner-text">
+              <span className="hero-pill-badge">AUTHORISED & VERIFIED</span>
+              <strong className="hero-partner-title">Doorstep Multi-Brand Service Partner</strong>
+              <span className="hero-pill-location">Fast & Genuine Repairs in {BIZ.area}</span>
+            </div>
+          </div>
+
+          <div className="hero-perks">
             <div className="perk-item">
               <span className="perk-icon">⚡</span>
               <div>
@@ -501,8 +509,11 @@ function Home() {
       {/* Footer */}
       <footer className="footer-wrap">
         <div className="footer-content">
-          <div className="footer-brand">
-            <h3>{BIZ.name}</h3>
+                    <div className="footer-brand">
+            <div className="footer-logo-row">
+              <img src="/mkr-logo.jpg" alt="MKR Service Center" className="footer-logo-img" />
+              <h3>{BIZ.name}</h3>
+            </div>
             <p>Reliable, prompt, and verified doorstep appliance repairs across {BIZ.area}.</p>
             <p>🕒 Working Hours: {BIZ.hours}</p>
           </div>
@@ -517,7 +528,35 @@ function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Chat */}
+      <WhatsAppButton />
     </div>
+  );
+}
+
+function WhatsAppButton() {
+  const cleanPhone = (BIZ.phone || "").replace(/[^0-9]/g, "") || "919363481184";
+  const defaultMsg = `Hello ${BIZ.name}, I would like to enquire about appliance repair in ${BIZ.area}.`;
+  const waUrl = `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodeURIComponent(defaultMsg)}`;
+
+  return (
+    <a
+      href={waUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-float"
+      aria-label="Chat with us on WhatsApp"
+      title="Chat with us on WhatsApp"
+    >
+      <span className="whatsapp-pulse" aria-hidden="true"></span>
+      <div className="whatsapp-icon-wrapper" aria-hidden="true">
+        <svg viewBox="0 0 32 32" className="whatsapp-svg" fill="currentColor">
+          <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.195-2.115c2.355 1.3 5.032 2.115 7.805 2.115 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.333c-2.485 0-4.912-0.697-7.027-2.015l-0.503-0.315-5.215 1.345 1.391-5.127-0.347-0.536c-1.424-2.203-2.179-4.767-2.179-7.419 0-7.424 6.043-13.467 13.467-13.467s13.467 6.043 13.467 13.467c0 7.424-6.043 13.467-13.467 13.467zM23.379 19.432c-0.404-0.203-2.392-1.18-2.763-1.315-0.371-0.135-0.641-0.203-0.912 0.203s-1.047 1.315-1.284 1.585c-0.236 0.27-0.472 0.304-0.877 0.101s-1.708-0.63-3.255-2.008c-1.204-1.073-2.017-2.399-2.253-2.804s-0.025-0.624 0.177-0.825c0.182-0.181 0.404-0.472 0.607-0.708s0.27-0.404 0.404-0.674c0.135-0.27 0.067-0.506-0.034-0.708s-0.912-2.197-1.25-3.007c-0.329-0.789-0.664-0.682-0.912-0.695-0.236-0.012-0.506-0.015-0.776-0.015s-0.708 0.101-1.079 0.506c-0.371 0.404-1.417 1.385-1.417 3.377s1.451 3.917 1.654 4.187c0.203 0.27 2.855 4.36 6.917 6.115 0.966 0.417 1.721 0.666 2.309 0.853 0.97 0.308 1.853 0.265 2.551 0.161 0.778-0.116 2.392-0.978 2.73-1.922 0.337-0.944 0.337-1.753 0.236-1.922-0.101-0.169-0.371-0.27-0.776-0.472z"/>
+        </svg>
+      </div>
+      <span className="whatsapp-text">Chat with us</span>
+    </a>
   );
 }
 
